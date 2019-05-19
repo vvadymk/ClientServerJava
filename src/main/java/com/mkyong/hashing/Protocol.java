@@ -1,17 +1,19 @@
 package com.mkyong.hashing;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 
 public class Protocol extends CRC16{
 
-    private static long bPktId=0;
-    private static byte bSrc=1;
-    private byte bMagic = (byte)Integer.parseInt("13", 16);
+    public static long bPktId=0;
+    public static byte bSrc=1;
+    public byte bMagic = (byte)Integer.parseInt("13", 16);
+    public byte[] messageBytes;
 
     public Protocol(String message, int bUserId, int cType) {
-        byte[] msg = message.getBytes();
+        byte[] msg = message.getBytes(StandardCharsets.UTF_8);
         int wLen = msg.length;
-        byte[] messageStructure = messageStructure(message, bUserId, cType);
-        byte[] messageBytes = new byte[18+wLen+4];
+        byte[] messageStructure = messageStructure(message, cType, bUserId);
+        messageBytes = new byte[18+wLen+4+8];
 
         messageBytes[0] = bMagic;
         messageBytes[1]=bSrc;
@@ -41,17 +43,18 @@ public class Protocol extends CRC16{
         messageBytes[16]=crc16B[2];
         messageBytes[17]=crc16B[3];
 
-        for(int i=0;i<wLen;i++){
+        for(int i=0;i<wLen+8;i++){
             messageBytes[18+i]=messageStructure[i];
+
         }
 
-        byte[] crc16B2 = intToBytes(crc16(messageBytes,18, 18+wLen-1));
+        byte[] crc16B2 = intToBytes(crc16(messageBytes,18, 18+wLen+8));
 
         messageBytes[18+wLen]=crc16B2[0];
         messageBytes[18+wLen+1]=crc16B2[1];
         messageBytes[18+wLen+2]=crc16B2[2];
         messageBytes[18+wLen+3]=crc16B2[3];
-        messageBytes[18+wLen+4]=crc16B2[4];
+
     }
 
     public byte[] intToBytes( final int i ) {
@@ -66,12 +69,14 @@ public class Protocol extends CRC16{
         return bb.array();
     }
 
-    public byte[] messageStructure(String message, int cType, int bUserId) {
+    public byte[] messageStructure(String message, int cType, int bUserId){
         byte[] cTypeB = intToBytes(cType);
         byte[] bUserIdB = intToBytes(bUserId);
-        byte[] msg = message.getBytes();
+        byte[] msg = message.getBytes(StandardCharsets.UTF_8);
+
+
         int wLen = msg.length;
-        byte[] messageStructure = new byte[wLen + 8];
+        byte[] messageStructure = new byte[wLen+8];
 
         messageStructure[0] = cTypeB[0];
         messageStructure[1] = cTypeB[1];
