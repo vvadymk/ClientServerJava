@@ -19,7 +19,7 @@ package com.mkyong.hashing;
 
 public class CRC16 {
 
-    public static void main(String[] args) {
+    public static int crc16(byte[] arr, int from, int to) {
 
         int[] table = {
                 0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241,
@@ -56,12 +56,12 @@ public class CRC16 {
                 0x8201, 0x42C0, 0x4380, 0x8341, 0x4100, 0x81C1, 0x8081, 0x4040,
         };
 
-
-        byte[] bytes = args[0].getBytes();
         int crc = 0x0000;
-        for (byte b : bytes) {
-            crc = (crc >>> 8) ^ table[(crc ^ b) & 0xff];
+        for(int i=from;i<to;i++){
+            crc = (crc>>8)^table[(crc^arr[i])&0xFF];
         }
+
+        return crc;
 
     }
 

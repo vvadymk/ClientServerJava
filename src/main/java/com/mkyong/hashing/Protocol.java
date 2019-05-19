@@ -1,17 +1,58 @@
 package com.mkyong.hashing;
 import java.nio.ByteBuffer;
 
-public class Protocol {
+public class Protocol extends CRC16{
 
     private static long bPktId=0;
     private static byte bSrc=1;
     private byte bMagic = (byte)Integer.parseInt("13", 16);
 
     public Protocol(String message, int bUserId, int cType) {
+        byte[] msg = message.getBytes();
+        int wLen = msg.length;
+        byte[] messageStructure = messageStructure(message, bUserId, cType);
+        byte[] messageBytes = new byte[18+wLen+4];
+
+        messageBytes[0] = bMagic;
+        messageBytes[1]=bSrc;
+
+        byte[] bPktIdB;
+        bPktIdB = longToBytes(bPktId);
+        messageBytes[2]=bPktIdB[0];
+        messageBytes[3]=bPktIdB[1];
+        messageBytes[4]=bPktIdB[2];
+        messageBytes[5]=bPktIdB[3];
+        messageBytes[6]=bPktIdB[4];
+        messageBytes[7]=bPktIdB[5];
+        messageBytes[8]=bPktIdB[6];
+        messageBytes[9]=bPktIdB[7];
+
+        byte[] wLenB = intToBytes(wLen);
 
 
+        messageBytes[10]=wLenB[0];
+        messageBytes[11]=wLenB[1];
+        messageBytes[12]=wLenB[2];
+        messageBytes[13]=wLenB[3];
+
+        byte[] crc16B = intToBytes(crc16(messageBytes,0,13));
+        messageBytes[14] = crc16B[0];
+        messageBytes[15]=crc16B[1];
+        messageBytes[16]=crc16B[2];
+        messageBytes[17]=crc16B[3];
+
+        for(int i=0;i<wLen;i++){
+            messageBytes[18+i]=messageStructure[i];
+        }
+
+        byte[] crc16B2 = intToBytes(crc16(messageBytes,18, 18+wLen-1));
+
+        messageBytes[18+wLen]=crc16B2[0];
+        messageBytes[18+wLen+1]=crc16B2[1];
+        messageBytes[18+wLen+2]=crc16B2[2];
+        messageBytes[18+wLen+3]=crc16B2[3];
+        messageBytes[18+wLen+4]=crc16B2[4];
     }
-
 
     public byte[] intToBytes( final int i ) {
         ByteBuffer bb = ByteBuffer.allocate(4);
