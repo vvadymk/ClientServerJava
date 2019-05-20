@@ -17,8 +17,7 @@ public class Taker extends CRC16 {
         int wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 14, 18)).getInt();
         int cType = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 18, 22)).getInt();
         int bUserId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 22, 26)).getInt();
-        byte[] msgEnc = Arrays.copyOfRange(protocol.messageBytes,26, protocol.messageBytes.length-4);
-        byte[] msgDec = cipher.doFinal(msgEnc);
+        byte[] msgDec = cipher.doFinal(Arrays.copyOfRange(protocol.messageBytes,26, protocol.messageBytes.length-4));
         int wCrc16w = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes,protocol.messageBytes.length-4,protocol.messageBytes.length)).getInt();
         String msg = new String(msgDec, "UTF-8");
 
