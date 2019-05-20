@@ -12,21 +12,26 @@ public class Taker extends CRC16 {
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, key);
 
-        byte bMagic = protocol.messageBytes[0];
-        byte bSrc = protocol.messageBytes[1];
         long bPktId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 2, 10)).getLong();
         int wLen = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 10, 14)).getInt();
         int wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 14, 18)).getInt();
         int cType = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 18, 22)).getInt();
         int bUserId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 22, 26)).getInt();
-        byte[] msgEnc = Arrays.copyOfRange(protocol.messageBytes,26, protocol.messageBytes.length-12);
+        byte[] msgEnc = Arrays.copyOfRange(protocol.messageBytes,26, protocol.messageBytes.length-4);
         byte[] msgDec = cipher.doFinal(msgEnc);
+        int wCrc16w = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes,protocol.messageBytes.length-4,protocol.messageBytes.length)).getInt();
         String msg = new String(msgDec, "UTF-8");
 
         int wCrc16Check = crc16(protocol.messageBytes,0,14);
+        int wCrc16Check2 = crc16(protocol.messageBytes,18,18+wLen);
         if(wCrc16==wCrc16Check)
         {
             System.out.println("wCrc16 співпало");
+            if(wCrc16Check2==wCrc16w){
+                System.out.println("\twCrc16\tCRC16 байтів (16 до 16+wLen-1) big-endian співпало");
+            }else{
+                System.out.println("\twCrc16\tCRC16 байтів (16 до 16+wLen-1) big-endian не співпало");
+        }
 
         }else{
             System.out.println("wCrc16 не співпало");

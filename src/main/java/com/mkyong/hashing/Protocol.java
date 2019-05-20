@@ -17,7 +17,7 @@ public class Protocol extends CRC16{
 
         byte[] messageStructure = messageStructure(message, cType, bUserId, key);
         int wLen = messageStructure.length;
-        messageBytes = new byte[18+wLen+4+8];
+        messageBytes = new byte[18+wLen+4];
 
         messageBytes[0] = bMagic;
         messageBytes[1]=bSrc;
@@ -60,6 +60,7 @@ public class Protocol extends CRC16{
         messageBytes[18+wLen+3]=crc16B2[3];
 
         bPktId++;
+        System.out.println(messageBytes[18+wLen]);
 
     }
 

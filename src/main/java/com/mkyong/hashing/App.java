@@ -20,7 +20,6 @@ public class App
         Taker taker = new Taker();
         taker.taker(first,key);
 
-
     }
 
 
