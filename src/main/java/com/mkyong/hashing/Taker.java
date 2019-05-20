@@ -26,15 +26,15 @@ public class Taker extends CRC16 {
         int wCrc16Check2 = crc16(protocol.messageBytes,18,18+wLen);
         if(wCrc16==wCrc16Check)
         {
-            System.out.println("wCrc16 співпало");
+            System.out.println("00-13 співпало");
             if(wCrc16Check2==wCrc16w){
-                System.out.println("\twCrc16\tCRC16 байтів (16 до 16+wLen-1) big-endian співпало");
+                System.out.println("18+wLen-1 співпало");
             }else{
-                System.out.println("\twCrc16\tCRC16 байтів (16 до 16+wLen-1) big-endian не співпало");
+                System.out.println("18+wLen-1 не співпало");
         }
 
         }else{
-            System.out.println("wCrc16 не співпало");
+            System.out.println("00-13 співпало");
         }
 
         System.out.println("bPktId: " + bPktId);
