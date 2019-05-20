@@ -7,7 +7,7 @@ public class Taker {
         byte[] msg = new byte[wLen+8];
 
 
-        for(int i =0;i<wLen+8;i++){
+        for(int i =0;i<wLen;i++){
             msg[i] = protocol[18+i];
         }
          byte[] realMsg =new byte[wLen];

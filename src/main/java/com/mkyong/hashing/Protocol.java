@@ -11,8 +11,9 @@ public class Protocol extends CRC16{
 
     public Protocol(String message, int bUserId, int cType) {
         byte[] msg = message.getBytes(StandardCharsets.UTF_8);
-        int wLen = msg.length;
+
         byte[] messageStructure = messageStructure(message, cType, bUserId);
+        int wLen = messageStructure.length;
         messageBytes = new byte[18+wLen+4+8];
 
         messageBytes[0] = bMagic;
@@ -43,12 +44,12 @@ public class Protocol extends CRC16{
         messageBytes[16]=crc16B[2];
         messageBytes[17]=crc16B[3];
 
-        for(int i=0;i<wLen+8;i++){
+        for(int i=0;i<wLen;i++){
             messageBytes[18+i]=messageStructure[i];
 
         }
 
-        byte[] crc16B2 = intToBytes(crc16(messageBytes,18, 18+wLen+8));
+        byte[] crc16B2 = intToBytes(crc16(messageBytes,18, 18+wLen));
 
         messageBytes[18+wLen]=crc16B2[0];
         messageBytes[18+wLen+1]=crc16B2[1];
