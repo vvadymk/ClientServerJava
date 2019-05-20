@@ -18,22 +18,20 @@ public class Taker extends CRC16 {
         int cType = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 18, 22)).getInt();
         int bUserId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 22, 26)).getInt();
         byte[] msgDec = cipher.doFinal(Arrays.copyOfRange(protocol.messageBytes,26, protocol.messageBytes.length-4));
-        int wCrc16w = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes,protocol.messageBytes.length-4,protocol.messageBytes.length)).getInt();
+        int wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes,protocol.messageBytes.length-4,protocol.messageBytes.length)).getInt();
         String msg = new String(msgDec, "UTF-8");
 
         int wCrc16Check = crc16(protocol.messageBytes,0,14);
         int wCrc16Check2 = crc16(protocol.messageBytes,18,18+wLen);
-        if(wCrc16==wCrc16Check)
-        {
-            System.out.println("00-13 співпало");
-            if(wCrc16Check2==wCrc16w){
-                System.out.println("18+wLen-1 співпало");
-            }else{
-                System.out.println("18+wLen-1 не співпало");
-        }
 
+        boolean firstCheck=checkCrc16(wCrc16, wCrc16Check);
+        boolean secondCheck= checkCrc16(wCrc16_2, wCrc16Check2);
+
+        if(firstCheck!=true || secondCheck!=true){
+           System.out.println("Контрольні суми не співпали");
+           return;
         }else{
-            System.out.println("00-13 співпало");
+           System.out.println("Контрольні суми співпали");
         }
 
         System.out.println("bPktId: " + bPktId);
@@ -43,4 +41,9 @@ public class Taker extends CRC16 {
         System.out.println(msg);
     }
 
+    public boolean checkCrc16(int a, int b){
+        if(a==b)
+            return true;
+        return false;
+    }
 }
