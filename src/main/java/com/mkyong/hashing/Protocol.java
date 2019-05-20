@@ -1,6 +1,10 @@
 package com.mkyong.hashing;
+import javax.crypto.*;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
 
 public class Protocol extends CRC16{
 
@@ -9,10 +13,9 @@ public class Protocol extends CRC16{
     public byte bMagic = (byte)Integer.parseInt("13", 16);
     public byte[] messageBytes;
 
-    public Protocol(String message, int bUserId, int cType) {
-        byte[] msg = message.getBytes(StandardCharsets.UTF_8);
+    public Protocol(String message, int bUserId, int cType, Key key) throws IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
 
-        byte[] messageStructure = messageStructure(message, cType, bUserId);
+        byte[] messageStructure = messageStructure(message, cType, bUserId, key);
         int wLen = messageStructure.length;
         messageBytes = new byte[18+wLen+4+8];
 
@@ -38,7 +41,7 @@ public class Protocol extends CRC16{
         messageBytes[12]=wLenB[2];
         messageBytes[13]=wLenB[3];
 
-        byte[] crc16B = intToBytes(crc16(messageBytes,0,13));
+        byte[] crc16B = intToBytes(crc16(messageBytes,0,14));
         messageBytes[14] = crc16B[0];
         messageBytes[15]=crc16B[1];
         messageBytes[16]=crc16B[2];
@@ -56,6 +59,8 @@ public class Protocol extends CRC16{
         messageBytes[18+wLen+2]=crc16B2[2];
         messageBytes[18+wLen+3]=crc16B2[3];
 
+        bPktId++;
+
     }
 
     public byte[] intToBytes( final int i ) {
@@ -70,11 +75,14 @@ public class Protocol extends CRC16{
         return bb.array();
     }
 
-    public byte[] messageStructure(String message, int cType, int bUserId){
+    public byte[] messageStructure(String message, int cType, int bUserId, Key key) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         byte[] cTypeB = intToBytes(cType);
         byte[] bUserIdB = intToBytes(bUserId);
         byte[] msg = message.getBytes(StandardCharsets.UTF_8);
+        Cipher cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.ENCRYPT_MODE, key);
 
+        msg = cipher.doFinal(msg);
 
         int wLen = msg.length;
         byte[] messageStructure = new byte[wLen+8];

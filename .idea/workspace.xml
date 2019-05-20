@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84e00dc7-fb6a-4ca7-a354-c29b44eaad27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java" afterDir="false" />
@@ -20,11 +19,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+            <state relative-caret-position="119">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="40" column="58" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,11 +52,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state>
+              <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,9 +97,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Consumer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/CRC16.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" />
       </list>
     </option>
   </component>
@@ -234,12 +239,12 @@
       <workItem from="1558271958038" duration="24000" />
       <workItem from="1558282970350" duration="12518000" />
       <workItem from="1558296368003" duration="7000" />
-      <workItem from="1558350014943" duration="574000" />
+      <workItem from="1558350014943" duration="7044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39138000" />
+    <option name="totallyTimeSpent" value="45608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -311,6 +316,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/CRC16.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -318,10 +343,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="40" column="58" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -331,24 +356,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>
