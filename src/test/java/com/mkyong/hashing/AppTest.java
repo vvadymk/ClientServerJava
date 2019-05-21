@@ -20,8 +20,8 @@ public class AppTest {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         keyGen.init(128);
         Key key = keyGen.generateKey();
-        Protocol protocol = new Protocol("h", 1, 1, key);
+        Protocol protocol = new Protocol("Test message", 1, 1, key);
         Taker taker = new Taker(protocol, key);
-        assertTrue(taker.getMsg().equals("h"));
+        assertTrue(taker.getMsg().equals("Test message"));
     }
 }

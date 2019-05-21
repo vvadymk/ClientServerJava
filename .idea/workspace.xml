@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84e00dc7-fb6a-4ca7-a354-c29b44eaad27" name="Default Changelist" comment="" />
+    <list default="true" id="84e00dc7-fb6a-4ca7-a354-c29b44eaad27" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="24" />
+            <state relative-caret-position="-641">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2261#2262#0" expanded="true" />
@@ -34,8 +36,6 @@
                 <element signature="e#2522#2523#0" expanded="true" />
                 <element signature="e#2554#2555#0" expanded="true" />
                 <element signature="e#2585#2586#0" expanded="true" />
-                <element signature="e#2260#2261#0" expanded="true" />
-                <element signature="e#2286#2287#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="173">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            <state relative-caret-position="224">
+              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,13 +86,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Consumer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/CRC16.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-3" />
     <option name="y" value="366" />
     <option name="width" value="1890" />
@@ -104,66 +104,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hashing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hashing" type="462c0819:PsiDirectoryNode" />
+              <item name="ClientServerJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,13 +202,11 @@
       <workItem from="1558380327546" duration="2368000" />
       <workItem from="1558433924453" duration="2754000" />
       <workItem from="1558437365909" duration="1090000" />
+      <workItem from="1558438692025" duration="243000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppTest_testMessage - 2019.05.21 at 13h 58m 29s.xml">
-      <configuration name="AppTest.testMessage" configurationId="AndroidJUnit" />
-    </history-entry>
     <history-entry file="AppTest_testMessage - 2019.05.21 at 14h 00m 22s.xml">
       <configuration name="AppTest.testMessage" configurationId="AndroidJUnit" />
     </history-entry>
@@ -283,14 +234,18 @@
     <history-entry file="AppTest_testMessage - 2019.05.21 at 14h 19m 58s.xml">
       <configuration name="AppTest.testMessage" configurationId="AndroidJUnit" />
     </history-entry>
+    <history-entry file="AppTest_testMessage - 2019.05.21 at 14h 38m 38s.xml">
+      <configuration name="AppTest.testMessage" configurationId="AndroidJUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51942000" />
+    <option name="totallyTimeSpent" value="52185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3222672" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -299,7 +254,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.24511546" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.24511546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,30 +328,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="24" />
+        <state relative-caret-position="-641">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2261#2262#0" expanded="true" />
@@ -411,8 +346,26 @@
             <element signature="e#2522#2523#0" expanded="true" />
             <element signature="e#2554#2555#0" expanded="true" />
             <element signature="e#2585#2586#0" expanded="true" />
-            <element signature="e#2260#2261#0" expanded="true" />
-            <element signature="e#2286#2287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
