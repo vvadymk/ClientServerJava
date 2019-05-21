@@ -17,8 +17,7 @@ public class App
 
         Protocol first = new Protocol("Hello world", 1, 1, key);
 
-        Taker taker = new Taker();
-        taker.taker(first,key);
+        Taker taker = new Taker(first, key);
 
     }
 
