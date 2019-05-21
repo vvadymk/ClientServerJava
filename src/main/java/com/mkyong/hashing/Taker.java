@@ -21,7 +21,7 @@ public class Taker extends CRC16 {
         taker(protocol, key);
     }
 
-    public void taker(Protocol protocol, Key key) throws Exception {
+    private void taker(Protocol protocol, Key key) throws Exception {
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, key);
 
