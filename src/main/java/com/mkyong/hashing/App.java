@@ -3,10 +3,6 @@ package com.mkyong.hashing;
 import javax.crypto.*;
 import java.security.Key;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main(String[] args) throws Exception {

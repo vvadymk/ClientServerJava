@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84e00dc7-fb6a-4ca7-a354-c29b44eaad27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="84e00dc7-fb6a-4ca7-a354-c29b44eaad27" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+            <state relative-caret-position="241">
+              <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -202,7 +200,7 @@
       <workItem from="1558380327546" duration="2368000" />
       <workItem from="1558433924453" duration="2754000" />
       <workItem from="1558437365909" duration="1090000" />
-      <workItem from="1558438692025" duration="243000" />
+      <workItem from="1558438692025" duration="519000" />
     </task>
     <servers />
   </component>
@@ -239,7 +237,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52185000" />
+    <option name="totallyTimeSpent" value="52461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -362,8 +360,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/mkyong/hashing/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        <state relative-caret-position="241">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
