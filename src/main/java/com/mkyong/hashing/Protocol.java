@@ -8,15 +8,18 @@ import java.security.NoSuchAlgorithmException;
 
 public class Protocol extends CRC16{
 
-    public static long bPktId=0;
-    public static byte bSrc=1;
-    public byte bMagic = (byte)Integer.parseInt("13", 16);
-    public byte[] messageBytes;
+    private static long bPktId=0;
+    private static byte bSrc=1;
+    private byte bMagic = (byte)Integer.parseInt("13", 16);
+    private byte[] messageBytes;
+    private int wLen;
+    private int crc16;
+    private int crc16_2;
 
     public Protocol(String message, int bUserId, int cType, Key key) throws IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
 
         byte[] messageStructure = messageStructure(message, cType, bUserId, key);
-        int wLen = messageStructure.length;
+        wLen = messageStructure.length;
         messageBytes = new byte[18+wLen+4];
 
         messageBytes[0] = bMagic;
@@ -41,7 +44,8 @@ public class Protocol extends CRC16{
         messageBytes[12]=wLenB[2];
         messageBytes[13]=wLenB[3];
 
-        byte[] crc16B = intToBytes(crc16(messageBytes,0,14));
+        crc16 = crc16(messageBytes,0, 14);
+        byte[] crc16B = intToBytes(crc16);
         messageBytes[14] = crc16B[0];
         messageBytes[15]=crc16B[1];
         messageBytes[16]=crc16B[2];
@@ -52,7 +56,8 @@ public class Protocol extends CRC16{
 
         }
 
-        byte[] crc16B2 = intToBytes(crc16(messageBytes,18, 18+wLen));
+        crc16_2 = crc16(messageBytes,18,18+wLen);
+        byte[] crc16B2 = intToBytes(crc16_2);
 
         messageBytes[18+wLen]=crc16B2[0];
         messageBytes[18+wLen+1]=crc16B2[1];
@@ -60,7 +65,7 @@ public class Protocol extends CRC16{
         messageBytes[18+wLen+3]=crc16B2[3];
 
         bPktId++;
-        System.out.println(messageBytes[18+wLen]);
+
 
     }
 
@@ -101,5 +106,33 @@ public class Protocol extends CRC16{
             messageStructure[8+i] = msg[i];
         }
         return messageStructure;
+    }
+
+    public static long getbPktId() {
+        return bPktId;
+    }
+
+    public int getwLen() {
+        return wLen;
+    }
+
+    public byte getbMagic() {
+        return bMagic;
+    }
+
+    public static byte getbSrc() {
+        return bSrc;
+    }
+
+    public byte[] getMessageBytes() {
+        return messageBytes;
+    }
+
+    public int getCrc16() {
+        return crc16;
+    }
+
+    public int getCrc16_2() {
+        return crc16_2;
     }
 }

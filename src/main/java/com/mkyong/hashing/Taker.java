@@ -25,18 +25,18 @@ public class Taker extends CRC16 {
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, key);
 
-        bPktId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 2, 10)).getLong();
-        wLen = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 10, 14)).getInt();
-        wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 14, 18)).getInt();
-        cType = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 18, 22)).getInt();
-        bUserId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes, 22, 26)).getInt();
-        msgDec = cipher.doFinal(Arrays.copyOfRange(protocol.messageBytes,26, protocol.messageBytes.length-4));
-        wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.messageBytes,protocol.messageBytes.length-4,protocol.messageBytes.length)).getInt();
+        bPktId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 2, 10)).getLong();
+        wLen = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 10, 14)).getInt();
+        wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 14, 18)).getInt();
+        cType = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 18, 22)).getInt();
+        bUserId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 22, 26)).getInt();
+        msgDec = cipher.doFinal(Arrays.copyOfRange(protocol.getMessageBytes(),26, protocol.getMessageBytes().length-4));
+        wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(),protocol.getMessageBytes().length-4,protocol.getMessageBytes().length)).getInt();
         msg = new String(msgDec, "UTF-8");
 
 
-        int wCrc16Check = crc16(protocol.messageBytes,0,14);
-        int wCrc16Check2 = crc16(protocol.messageBytes,18,18+wLen);
+        int wCrc16Check = crc16(protocol.getMessageBytes(),0,14);
+        int wCrc16Check2 = crc16(protocol.getMessageBytes(),18,18+wLen);
 
         boolean firstCheck=checkCrc16(wCrc16, wCrc16Check);
         boolean secondCheck= checkCrc16(wCrc16_2, wCrc16Check2);
