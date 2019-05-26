@@ -23,29 +23,27 @@ public class Receiver extends Thread {
         ArrayList list;
         int cType;
         JSONObject decrypted;
-    public void receiveMessage(ArrayList<Integer> list) throws InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, NoSuchPaddingException {
+    public void receiveMessage(ArrayList<JSONObject> list) throws InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, NoSuchPaddingException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         keyGen.init(128);
         key = keyGen.generateKey();
         JsonObject first = new JsonObject();
-        first.addProperty("name", "element");
-        first.addProperty("do", 1);
+        first.addProperty("name", "Grechka");
         first.addProperty("value", 10);
 
-        this.list=list;
+        this.list = list;
 
         final BlockingQueue<JSONObject> queue = new ArrayBlockingQueue<JSONObject>(2);
 
         //create package
-        protocol = new Protocol(first.toString(), 1, 1, key);
-
+        protocol = new Protocol(first.toString(), 1, 0, key);
 
 
         new Thread() {
             public void run() {
-                try{
+                try {
                     Taker taker = new Taker(protocol, key);
-                    cType=taker.getcType();
+                    cType = taker.getcType();
                     JSONParser jsonParser = new JSONParser();
                     JSONObject jsonObject = (JSONObject) jsonParser.parse(taker.getMsg().toString());
                     queue.put(jsonObject);
@@ -57,39 +55,44 @@ public class Receiver extends Thread {
             }
         }.start();
 
-        new Thread(){
-            public void run(){
-                try{
-                    new Thread(){
-                        public void run(){
-                            try{
-                                JSONParser jsonParser = new JSONParser();
-                                decrypted = (JSONObject) jsonParser.parse(queue.take().toString());
-                                Processor p =new Processor(decrypted);
-                                if(p.process()) {
-                                    if (cType == 1) {
-                                        String a = decrypted.get("value").toString();
-                                        int c = Integer.parseInt(a);
-                                        int b = list.get(0);
-                                        list.add(0, b + c);
-                                        System.out.println(list.get(0));
-                                    }else if(cType==0){
-                                        String a = decrypted.get("value").toString();
-                                        System.out.println(a);
-                                    }
-                                }else{
 
-                                }
-                            }catch (Exception e){
-
-                            }
+        new Thread() {
+            public void run() {
+                try {
+                    JSONParser jsonParser = new JSONParser();
+                    decrypted = (JSONObject) jsonParser.parse(queue.take().toString());
+                    Processor p = new Processor(decrypted);
+                    if (p.process()) {
+                        if (cType == 1) {
+                            String a = decrypted.get("value").toString();
+                            int c = Integer.parseInt(a);
+                            int b =Integer.parseInt(list.get(0).get("value").toString());
+                            JSONObject obj = new JSONObject();
+                            obj = list.get(0);
+                            obj.put("value", c+b);
+                            list.add(0, obj);
+                           System.out.println(list.get(0).toString());
+                        } else if (cType == 0) {
+                            String a = list.get(0).get("value").toString();
+                            System.out.println(a);
+                        } else if (cType == 2) {
+                            String a = decrypted.get("value").toString();
+                            int c = Integer.parseInt(a);
+                            int b =Integer.parseInt(list.get(0).get("value").toString());
+                            JSONObject obj = new JSONObject();
+                            obj = list.get(0);
+                            obj.put("value", b-c);
+                            list.add(0, obj);
+                            System.out.println(list.get(0).toString());
                         }
-                    }.start();
-                }catch (Exception e){
+                    } else {
+
+                    }
+                } catch (Exception e) {
 
                 }
             }
         }.start();
-    }
 
+    }
 }
