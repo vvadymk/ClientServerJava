@@ -1,4 +1,5 @@
 package com.mkyong.hashing;
+
 import javax.crypto.*;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -38,7 +39,6 @@ public class Protocol extends CRC16{
 
         byte[] wLenB = intToBytes(wLen);
 
-
         messageBytes[10]=wLenB[0];
         messageBytes[11]=wLenB[1];
         messageBytes[12]=wLenB[2];
@@ -65,7 +65,6 @@ public class Protocol extends CRC16{
         messageBytes[18+wLen+3]=crc16B2[3];
 
         bPktId++;
-
 
     }
 

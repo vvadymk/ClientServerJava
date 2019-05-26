@@ -5,7 +5,6 @@ import java.nio.ByteBuffer;
 import java.security.Key;
 import java.util.Arrays;
 
-
 public class Taker extends CRC16 {
 
     private long bPktId;
@@ -34,7 +33,6 @@ public class Taker extends CRC16 {
         wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(),protocol.getMessageBytes().length-4,protocol.getMessageBytes().length)).getInt();
         msg = new String(msgDec, "UTF-8");
 
-
         int wCrc16Check = crc16(protocol.getMessageBytes(),0,14);
         int wCrc16Check2 = crc16(protocol.getMessageBytes(),18,18+wLen);
 
@@ -42,10 +40,12 @@ public class Taker extends CRC16 {
         boolean secondCheck= checkCrc16(wCrc16_2, wCrc16Check2);
 
         if(firstCheck!=true || secondCheck!=true){
-           System.out.println("Контрольні суми не співпали");
+           System.out.println("\n" +
+                   "The checksums did not match");
            return;
         }else{
-           System.out.println("Контрольні суми співпали");
+           System.out.println("\n" +
+                   "The checksums matched");
         }
 
         System.out.println("bPktId: " + bPktId);
