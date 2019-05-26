@@ -29,14 +29,14 @@ public class Receiver extends Thread {
         key = keyGen.generateKey();
         JsonObject first = new JsonObject();
         first.addProperty("name", "Grechka");
-        first.addProperty("value", 10);
+        first.addProperty("value", 5);
 
         this.list = list;
 
         final BlockingQueue<JSONObject> queue = new ArrayBlockingQueue<JSONObject>(2);
 
         //create package
-        protocol = new Protocol(first.toString(), 1, 0, key);
+        protocol = new Protocol(first.toString(), 1, 2, key);
 
 
         new Thread() {
@@ -80,10 +80,14 @@ public class Receiver extends Thread {
                             int c = Integer.parseInt(a);
                             int b =Integer.parseInt(list.get(0).get("value").toString());
                             JSONObject obj = new JSONObject();
-                            obj = list.get(0);
-                            obj.put("value", b-c);
-                            list.add(0, obj);
-                            System.out.println(list.get(0).toString());
+                            if(b-c>=0) {
+                                obj = list.get(0);
+                                obj.put("value", b - c);
+                                list.add(0, obj);
+                                System.out.println(list.get(0).toString());
+                            }else{
+                                System.out.println("Invalid values");
+                            }
                         }
                     } else {
 
