@@ -22,7 +22,7 @@ public class Receiver extends Thread {
         Protocol protocol;
         ArrayList list;
         int cType;
-
+        JSONObject decrypted;
     public void receiveMessage(ArrayList<Integer> list) throws InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, NoSuchPaddingException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         keyGen.init(128);
@@ -64,13 +64,21 @@ public class Receiver extends Thread {
                         public void run(){
                             try{
                                 JSONParser jsonParser = new JSONParser();
-                                JSONObject take = (JSONObject) jsonParser.parse(queue.take().toString());
-                                if(cType==1) {
-                                    String a = take.get("value").toString();
-                                    int c = Integer.parseInt(a);
-                                    int b = list.get(0);
-                                    list.add(0, b + c);
-                                    System.out.println(list.get(0));
+                                decrypted = (JSONObject) jsonParser.parse(queue.take().toString());
+                                Processor p =new Processor(decrypted);
+                                if(p.process()) {
+                                    if (cType == 1) {
+                                        String a = decrypted.get("value").toString();
+                                        int c = Integer.parseInt(a);
+                                        int b = list.get(0);
+                                        list.add(0, b + c);
+                                        System.out.println(list.get(0));
+                                    }else if(cType==0){
+                                        String a = decrypted.get("value").toString();
+                                        System.out.println(a);
+                                    }
+                                }else{
+
                                 }
                             }catch (Exception e){
 
@@ -83,6 +91,5 @@ public class Receiver extends Thread {
             }
         }.start();
     }
-
 
 }
