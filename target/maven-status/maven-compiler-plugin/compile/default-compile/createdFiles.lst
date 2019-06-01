@@ -1,4 +1,7 @@
+com\mkyong\hashing\Protocol.class
+com\mkyong\hashing\Sender.class
 com\mkyong\hashing\CRC16.class
 com\mkyong\hashing\Taker.class
-com\mkyong\hashing\Protocol.class
+com\mkyong\hashing\Processor.class
+com\mkyong\hashing\Receiver.class
 com\mkyong\hashing\App.class
