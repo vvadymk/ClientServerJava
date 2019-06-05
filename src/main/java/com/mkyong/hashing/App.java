@@ -12,7 +12,7 @@ public class App
     public static void main(String[] args) throws Exception {
 
         JSONObject firstItem = new JSONObject();
-        firstItem.put("name", "Grechka");
+        firstItem.put("name", "grechka");
         firstItem.put("value", 20);
         firstItem.put("cost", 20);
         ArrayList<JSONObject> list = new ArrayList<JSONObject>();
@@ -23,10 +23,11 @@ public class App
         Processor p =new Processor();
 
         JsonObject first = new JsonObject();
-        first.addProperty("name", "Grechka");
+        first.addProperty("name", "grechka");
         first.addProperty("value", 10);
+        first.addProperty("price", 20);
 
-        Protocol pr = new Protocol(first.toString(),1, 2, key);
+        Protocol pr = new Protocol(first.toString(),1, 0, key);
         Receiver receiver = new Receiver(pr, key, p);
         receiver.receive(pr);
 
