@@ -134,4 +134,5 @@ public class Protocol extends CRC16{
     public int getCrc16_2() {
         return crc16_2;
     }
+
 }

@@ -44,7 +44,7 @@ public class Processor {
               if(taker.getcType()==0)
               {
                   goods.get(good.getName());
-                  System.out.println( goods.get(good.getName()));
+                  System.out.println( goods.get(good.getName()).getName());
               }else if(taker.getcType()==1){
                   goods.get(good.getName()).setValue(goods.get(good.getName()).getValue()+good.getValue());
                   System.out.println(goods.get(good.getName()).getValue());

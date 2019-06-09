@@ -16,25 +16,25 @@ public class Taker extends CRC16 {
     private int wCrc16_2;
     private String msg;
 
-    public Taker(Protocol protocol, Key key) throws Exception {
-        taker(protocol, key);
+    public Taker(byte[] bytes, Key key) throws Exception {
+        taker(bytes, key);
     }
 
-    private void taker(Protocol protocol, Key key) throws Exception {
+    private void taker(byte[] bytes, Key key) throws Exception {
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, key);
 
-        bPktId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 2, 10)).getLong();
-        wLen = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 10, 14)).getInt();
-        wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 14, 18)).getInt();
-        cType = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 18, 22)).getInt();
-        bUserId = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(), 22, 26)).getInt();
-        msgDec = cipher.doFinal(Arrays.copyOfRange(protocol.getMessageBytes(),26, protocol.getMessageBytes().length-4));
-        wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(protocol.getMessageBytes(),protocol.getMessageBytes().length-4,protocol.getMessageBytes().length)).getInt();
+        bPktId = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 2, 10)).getLong();
+        wLen = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 10, 14)).getInt();
+        wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 14, 18)).getInt();
+        cType = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 18, 22)).getInt();
+        bUserId = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 22, 26)).getInt();
+        msgDec = cipher.doFinal(Arrays.copyOfRange(bytes,26, bytes.length-4));
+        wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(bytes,bytes.length-4,bytes.length)).getInt();
         msg = new String(msgDec, "UTF-8");
 
-        int wCrc16Check = crc16(protocol.getMessageBytes(),0,14);
-        int wCrc16Check2 = crc16(protocol.getMessageBytes(),18,18+wLen);
+        int wCrc16Check = crc16(bytes,0,14);
+        int wCrc16Check2 = crc16(bytes,18,18+wLen);
 
         boolean firstCheck=checkCrc16(wCrc16, wCrc16Check);
         boolean secondCheck= checkCrc16(wCrc16_2, wCrc16Check2);
@@ -89,4 +89,7 @@ public class Taker extends CRC16 {
         return msg;
     }
 
+    public byte[] getMsgDec() {
+        return msgDec;
+    }
 }

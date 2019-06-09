@@ -28,8 +28,8 @@ public class App
         first.addProperty("price", 20);
 
         Protocol pr = new Protocol(first.toString(),1, 0, key);
-        Receiver receiver = new Receiver(pr, key, p);
-        receiver.receive(pr);
+        Receiver receiver = new Receiver(pr.getMessageBytes(), key, p);
+        receiver.receive(pr.getMessageBytes());
 
     }
 
