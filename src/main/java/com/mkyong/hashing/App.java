@@ -23,11 +23,11 @@ public class App
         Processor p =new Processor();
 
         JsonObject first = new JsonObject();
-        first.addProperty("name", "apple");
+        first.addProperty("name", "grechka");
         first.addProperty("value", 10);
-        first.addProperty("price", 20);
+        first.addProperty("price", 10);
 
-        Protocol pr = new Protocol(first.toString(),1, 4, key);
+        Protocol pr = new Protocol(first.toString(),1, 1, key);
         Receiver receiver = new Receiver(pr.getMessageBytes(), key, p);
     }
 
