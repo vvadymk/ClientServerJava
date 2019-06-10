@@ -1,6 +1,5 @@
 package com.mkyong.hashing;
 
-import javax.crypto.Cipher;
 import java.nio.ByteBuffer;
 import java.security.Key;
 import java.util.Arrays;
@@ -21,15 +20,15 @@ public class Taker extends CRC16 {
     }
 
     private void taker(byte[] bytes, Key key) throws Exception {
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.DECRYPT_MODE, key);
+//        Cipher cipher = Cipher.getInstance("AES");
+//        cipher.init(Cipher.DECRYPT_MODE, key);
 
         bPktId = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 2, 10)).getLong();
         wLen = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 10, 14)).getInt();
         wCrc16 = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 14, 18)).getInt();
         cType = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 18, 22)).getInt();
         bUserId = ByteBuffer.wrap(Arrays.copyOfRange(bytes, 22, 26)).getInt();
-        msgDec = cipher.doFinal(Arrays.copyOfRange(bytes,26, bytes.length-4));
+        msgDec = Arrays.copyOfRange(bytes,26, bytes.length-4);
         wCrc16_2 = ByteBuffer.wrap(Arrays.copyOfRange(bytes,bytes.length-4,bytes.length)).getInt();
         msg = new String(msgDec, "UTF-8");
 

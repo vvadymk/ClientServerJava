@@ -84,10 +84,10 @@ public class Protocol extends CRC16{
         byte[] cTypeB = intToBytes(cType);
         byte[] bUserIdB = intToBytes(bUserId);
         byte[] msg = message.getBytes(StandardCharsets.UTF_8);
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.ENCRYPT_MODE, key);
+//        Cipher cipher = Cipher.getInstance("AES");
+//        cipher.init(Cipher.ENCRYPT_MODE, key);
 
-        msg = cipher.doFinal(msg);
+//        msg = cipher.doFinal(msg);
 
         int wLen = msg.length;
         byte[] messageStructure = new byte[wLen+8];
