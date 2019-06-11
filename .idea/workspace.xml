@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84e00dc7-fb6a-4ca7-a354-c29b44eaad27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_47.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Processor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Protocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Taker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Processor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Protocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Protocol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Sender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Taker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/hashing/Taker.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+            <state relative-caret-position="387">
+              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,11 +65,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Processor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
+            <state relative-caret-position="2771">
               <caret line="167" column="48" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#559#572#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,8 +194,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,7 +204,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -378,6 +361,8 @@
       <workItem from="1560172112930" duration="1949000" />
       <workItem from="1560175157205" duration="4687000" />
       <workItem from="1560187125268" duration="3518000" />
+      <workItem from="1560194966248" duration="93000" />
+      <workItem from="1560195738632" duration="103000" />
     </task>
     <servers />
   </component>
@@ -414,13 +399,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115457000" />
+    <option name="totallyTimeSpent" value="115653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3562753" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36437246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -430,7 +414,7 @@
       <window_info id="DB Browser" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.23090586" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.23090586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -523,15 +507,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d36bc743-5349-4ae5-b3e9-873a1206f0b0/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://d36bc743-5349-4ae5-b3e9-873a1206f0b0/schema/sklad/table/sklat">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://d36bc743-5349-4ae5-b3e9-873a1206f0b0/schema/sklad/table/sklat" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/78140283-4a07-46bb-b763-c1ccc9228f1d/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -596,21 +572,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Processor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="167" column="48" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+        <state relative-caret-position="387">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#559#572#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/App.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/hashing/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+        <state relative-caret-position="2771">
+          <caret line="167" column="48" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
